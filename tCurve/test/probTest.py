@@ -207,8 +207,23 @@ class ProbTest(TestCase):
 #         self.assertIn(self.errorKey, result)
 #         self.assertIn(self.errorValue, result[self.errorKey])
         
-#   _integrate
-#     Analysis:
+#   200 _integrate
+#    Desired level of confidence: BVA
+#    input-output analysis:
+#    inputs:
+#        n  -> integer, .GE.3, mandatory, validated
+#        t  ->    float > 0.0, mandatory, validated
+#        _f -> function, already constructed and tested
+#    outputs:
+#        float .GE. 0 .LE. 1.0
+#    
+#    Happy path analysis:
+#        test 010:
+#        test 020:
+#        test 030:
+#        test 040:
+#        test 050:
+#        test 060:
 #     1)Basic idea: Considering the complexity of _f and the general application of Simpson's Rule,
 #       replace the origin _f with simple function f(t) = t**2. If the new function passes all the 
 #       tests, the same code should work for the original _f by just replacing it back with _f.

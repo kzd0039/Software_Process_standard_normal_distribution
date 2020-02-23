@@ -106,7 +106,7 @@ def _f(u, n):
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    return 1/3
+    pass
 
 
     
