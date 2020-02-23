@@ -68,7 +68,145 @@ class ProbTest(TestCase):
     #        tails:  invalid tails    tails = 3
     #
     # Happy path
-
+#     def test100_010ShouldCalculateNominalCase1TailHttp(self):
+#         self.setT(1.8946)
+#         self.setN(7)
+#         self.setTails(1)
+#         self.setExtra("a")
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
+#     
+#     def test100_010ShouldCalculateNominalCase1Tail(self):
+#         self.setT(1.8946)
+#         self.setN(7)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
+#  
+#     def test100_020ShouldCalculateNominalCase2Tail(self):
+#         self.setT(1.8946)
+#         self.setN(7)
+#         self.setTails(2)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.900, 3)
+#  
+#     def test100_030ShouldCalculateLowNLowT1TailEdgeCase(self):
+#         self.setT(0.2767)
+#         self.setN(3)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.600, 3)
+#  
+#     def test100_040ShouldCalculateLowNLowT2TailEdgeCase(self):
+#         self.setT(0.2767)
+#         self.setN(3)
+#         self.setTails(2)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.200, 3)
+#  
+#     def test100_050ShouldCalculateHighNLowT1TailEdgeCase(self):
+#         self.setT(0.2567)
+#         self.setN(20)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.600, 3)
+#  
+#     def test100_060ShouldCalculateHighNLowT2TailEdgeCase(self):
+#         self.setT(0.2567)
+#         self.setN(20)
+#         self.setTails(2)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.200, 3)
+#  
+#     def test100_070ShouldCalculateLowNHighT1EdgeCase(self):
+#         self.setT(5.8409)
+#         self.setN(3)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.995, 3)
+#  
+#     def test100_080ShouldCalculateLowNHighT2EdgeCase(self):
+#         self.setT(5.8409)
+#         self.setN(3)
+#         self.setTails(2)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.990, 3)
+#  
+#     def test100_090ShouldCalculateHighHighT1TailEdgeCase(self):
+#         self.setT(2.8453)
+#         self.setN(20)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.995, 3)
+#  
+#     def test100_100ShouldCalculateHighHighT2TailEdgeCase(self):
+#         self.setT(2.8453)
+#         self.setN(20)
+#         self.setTails(2)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.990, 3)
+#  
+#     def test100_110ShouldCalculateWithDefaultTails(self):
+#         self.setT(1.8946)
+#         self.setN(7)
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.900, 3)
+#  
+#     # Sad path
+#     def test100_910ShouldRaiseExceptionOnMissingT(self):
+#         self.setN(self.nominalN)
+#         self.setTails(self.nominalTails)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_920ShouldRaiseExceptionOnOutOfBoundsT(self):
+#         self.setT(-1.0)
+#         self.setN(self.nominalN)
+#         self.setTails(self.nominalTails)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_930ShouldRaiseExceptionOnNonNumericT(self):
+#         self.setT("abc")
+#         self.setN(self.nominalN)
+#         self.setTails(self.nominalTails)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_940ShouldRaiseExceptionOnInvalidTails(self):
+#         self.setTails(0)
+#         self.setT(self.nominalT)
+#         self.setN(self.nominalN)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_950ShouldRaiseExceptionOnMissingN(self):
+#         self.setT(self.nominalT)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_960ShouldRaiseExceptionOnOutOfBoundN(self):
+#         self.setN(0)
+#         self.setT(self.nominalT)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+#  
+#     def test100_970ShouldRaiseExceptionOnNonIntegerN(self):
+#         self.setN(2.5)
+#         self.setT(self.nominalT)
+#         self.setTails(1)
+#         result = prob(self.inputDictionary)
+#         self.assertIn(self.errorKey, result)
+#         self.assertIn(self.errorValue, result[self.errorKey])
+        
 #   _integrate
 #     Analysis:
 #     1)Basic idea: Considering the complexity of _f and the general application of Simpson's Rule,
