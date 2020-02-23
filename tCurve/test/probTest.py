@@ -224,17 +224,12 @@ class ProbTest(TestCase):
 #        test 040:
 #        test 050:
 #        test 060:
-#     1)Basic idea: Considering the complexity of _f and the general application of Simpson's Rule,
-#       replace the origin _f with simple function f(t) = t**2. If the new function passes all the 
-#       tests, the same code should work for the original _f by just replacing it back with _f.
-#     2)Three input t, n and _f. t and n arrives validated and n is a constant in function _f. 
-#     3)
+#    
 
-
-    def test_integrate_001(self):
+    def test200_010(self):
         t = 1
         n = 2
-        _f = t**n
+        _f = t**2
         self.assertAlmostEqual(1/3,_integrate(t, n, _f),3)
         
    
