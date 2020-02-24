@@ -228,11 +228,10 @@ class ProbTest(TestCase):
 #        test 060:
 #    
 
-#     def test300_formal(self):
-#         self.assertEqual()
-#     
-    def test400_f(self):
-        self.assertEqual(2**3,_f(2,3))
+    def test300_formal(self):
+        self.assertEqual(1/3, _formal(1,2))
+     
+
         
         
 #     def test200_010(self):
