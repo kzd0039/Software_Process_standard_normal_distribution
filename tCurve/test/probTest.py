@@ -297,6 +297,7 @@ class ProbTest(TestCase):
         result = constant * integration * 2
         self.assertAlmostEqual(result, 0.990, 3)
         
+        
 
 
 
