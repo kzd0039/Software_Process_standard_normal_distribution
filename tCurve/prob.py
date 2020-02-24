@@ -107,7 +107,7 @@ def _f(u,n):
     return u**n
 
 def _formal(u,n):
-    return 
+    return u**(n+1)/(n+1)
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
