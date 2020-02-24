@@ -104,7 +104,7 @@ def _calculateConstant(n):
 #     return result
 
 def _f(u,n):
-    return u**n
+    return 
 
 def _formal(u,n):
     return u**(n+1)/(n+1)
