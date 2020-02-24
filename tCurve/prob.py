@@ -129,6 +129,6 @@ def _integrate(t, n, _f):
 
         simpsonNew = temp * w / 3
         s *= 2   
-    return simpsonNew,3
+    return simpsonNew
 
     
