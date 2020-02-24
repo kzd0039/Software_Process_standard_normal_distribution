@@ -123,7 +123,8 @@ def _integrate(t, n, _f):
                 temp += _f(x*w, n)*4
 
         simpsonNew = temp * w / 3
-        s *= 2   
+        s *= 2  
+         
     return simpsonNew
 
     

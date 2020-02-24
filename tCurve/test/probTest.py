@@ -2,6 +2,7 @@ from unittest import TestCase
 from tCurve.prob import prob as prob
 from tCurve.prob import _integrate
 from tCurve.prob import _f
+from tCurve.prob import _calculateConstant
 import json
 
 
@@ -235,8 +236,13 @@ class ProbTest(TestCase):
 #         result = prob(self.inputDictionary)
 #         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
 
-    def test200_010s(self):
-        self.assertAlmostEqual(_integrate(1.8946,7, _f), 0.45, 3)
+    def test200_010_OneTail(self):
+        t = 1.8946
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration + 0.5
+        self.assertAlmostEqual(result, 0.95, 3)
 
   
 
