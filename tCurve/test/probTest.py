@@ -228,16 +228,11 @@ class ProbTest(TestCase):
 #        test 060:
 #    
 
-    def test300_formal(self):
-        self.assertEqual(1/3, _formal(1,2))
-     
-
-        
-        
-#     def test200_010(self):
-#         t = 1
-#         n = 2
-#         self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
+  
+    def test200_010(self):
+        t = 1
+        n = 2
+        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
         
 
    

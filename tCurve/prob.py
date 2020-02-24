@@ -116,17 +116,19 @@ def _integrate(t, n, _f):
     simpsonNew = epsilon
     s = 4
     
-    w = t / s
-    temp = _f(0,n) + _f(t,n)
+    while (abs((simpsonNew - simpsonOld ) / simpsonNew)) > epsilon:
+        simpsonOld = simpsonNew
+        w = t / s
+        temp = _f(0, n) + _f(t, n)
+        
+        for x in range(1, s):
+            if x % 2 == 0:
+                temp += _f(x*w, n)*2
+            else:
+                temp += _f(x*w, n)*4
 
-    for x in range(1, s):
-        if x % 2 == 0:
-            temp += _f(x*w,n)*2
-        else:
-            temp += _f(x*w,n)*4
-
-    simpsonNew = temp * w / 3
-    
-    return simpsonNew
+        simpsonNew = temp * w / 3
+        s *= 2   
+    return simpsonNew,3
 
     
