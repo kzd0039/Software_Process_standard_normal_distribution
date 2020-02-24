@@ -220,29 +220,25 @@ class ProbTest(TestCase):
 #        float .GE. 0 .LE. 1.0
 #    
 #    Happy path analysis:
-#        test 010:
-#        test 020:
+#        test 010: t = 1.8946, n = 7, tail = 1, output = 0.95
+#        test 020: t = 1.8946, n = 7, tail = 2, output = 0.90
 #        test 030:
 #        test 040:
 #        test 050:
 #        test 060:
+#    Sad path analysis:
+#
+#        test 910:
 #    
 
-#     def test100_010ShouldCalculateNominalCase1TailHttp(self):
-#         self.setT(1.8946)
-#         self.setN(7)
-#         self.setTails(1)
-#         self.setExtra("a")
-#         result = prob(self.inputDictionary)
-#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
-
+#Happy path
     def test200_010_OneTail(self):
         t = 1.8946
         n = 7
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration + 0.5
-        self.assertAlmostEqual(result, 0.95, 3)
+        self.assertAlmostEqual(result, 0.950, 3)
 
     def test200_020_TwoTails(self):
         t = 1.8946
@@ -250,11 +246,55 @@ class ProbTest(TestCase):
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration * 2
-        self.assertAlmostEqual(result, 0.90, 3)
-  
+        self.assertAlmostEqual(result, 0.900, 3)
+        
+    def test200_030_OneoTail(self):
+        t = 0.2767
+        n = 3
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration + 0.5
+        self.assertAlmostEqual(result, 0.600, 3)
+        
+    def test200_040_TwoTails(self):
+        t = 0.2767
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration * 2
+        self.assertAlmostEqual(result, 0.200, 3)   
 
+    def test200_050_OneTail(self):
+        t = 5.8409
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration + 0.5
+        self.assertAlmostEqual(result, 0.995, 3)
         
+    def test200_060_TwoTails(self):
+        t = 5.8409
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration * 2
+        self.assertAlmostEqual(result, 0.990, 3)
+
+    def test200_070_OneTail(self):
+        t = 2.8453
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration + 0.5
+        self.assertAlmostEqual(result, 0.995, 3)
         
+    def test200_080_TwoTails(self):
+        t = 2.8453
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration * 2
+        self.assertAlmostEqual(result, 0.990, 3)
         
 
    
