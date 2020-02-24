@@ -258,7 +258,7 @@ class ProbTest(TestCase):
         
     def test200_040_TwoTails(self):
         t = 0.2767
-        n = 7
+        n = 3
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration * 2
@@ -266,7 +266,7 @@ class ProbTest(TestCase):
 
     def test200_050_OneTail(self):
         t = 5.8409
-        n = 7
+        n = 3
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration + 0.5
@@ -274,7 +274,7 @@ class ProbTest(TestCase):
         
     def test200_060_TwoTails(self):
         t = 5.8409
-        n = 7
+        n = 3
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration * 2
@@ -282,7 +282,7 @@ class ProbTest(TestCase):
 
     def test200_070_OneTail(self):
         t = 2.8453
-        n = 7
+        n = 20
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration + 0.5
@@ -290,7 +290,7 @@ class ProbTest(TestCase):
         
     def test200_080_TwoTails(self):
         t = 2.8453
-        n = 7
+        n = 20
         constant = _calculateConstant(n)
         integration = _integrate(t, n, _f)
         result = constant * integration * 2
