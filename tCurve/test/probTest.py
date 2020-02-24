@@ -243,6 +243,16 @@ class ProbTest(TestCase):
         n = 2
         self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
         
+    def test200_040(self):
+        t = 16
+        n = 2
+        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
+        
+    def test200_050(self):
+        t = 35
+        n = 2
+        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
+        
    
         
         

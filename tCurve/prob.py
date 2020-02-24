@@ -118,7 +118,7 @@ def _integrate(t, n, _f):
     
     w = t / s
     temp = _f(0,n) + _f(t,n)
-    
+
     for x in range(1, s):
         if x % 2 == 0:
             temp += _f(x*w,n)*2
