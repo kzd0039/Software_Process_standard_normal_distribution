@@ -96,18 +96,13 @@ def _calculateConstant(n):
     return result
 
 
-# def _f(u, n):
-#     n = float(n)
-#     base = (1 + (u ** 2) / n)
-#     exponent = -(n + 1.0) / 2.0
-#     result = base ** exponent
-#     return result
+def _f(u, n):
+    n = float(n)
+    base = (1 + (u ** 2) / n)
+    exponent = -(n + 1.0) / 2.0
+    result = base ** exponent
+    return result
 
-def _f(u,n):
-    return u**n
-
-def _formal(u,n):
-    return u**(n+1)/(n+1)
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):

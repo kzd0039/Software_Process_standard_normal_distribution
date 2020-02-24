@@ -2,7 +2,6 @@ from unittest import TestCase
 from tCurve.prob import prob as prob
 from tCurve.prob import _integrate
 from tCurve.prob import _f
-from tCurve.prob import _formal
 import json
 
 
@@ -228,21 +227,19 @@ class ProbTest(TestCase):
 #        test 060:
 #    
 
+#     def test100_010ShouldCalculateNominalCase1TailHttp(self):
+#         self.setT(1.8946)
+#         self.setN(7)
+#         self.setTails(1)
+#         self.setExtra("a")
+#         result = prob(self.inputDictionary)
+#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
+
+    def test200_010s(self):
+        self.assertAlmostEqual(_integrate(1.8946,7, _f), 0.45, 3)
+
   
-    def test200_010(self):
-        t = 1
-        n = 2
-        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
-        
-    def test200_020(self):
-        t = 1.445
-        n = 2
-        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
-        
-    def test200_030(self):
-        t = 20.345
-        n = 2
-        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
+
         
         
         
