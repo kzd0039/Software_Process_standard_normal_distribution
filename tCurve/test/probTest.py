@@ -244,6 +244,13 @@ class ProbTest(TestCase):
         result = constant * integration + 0.5
         self.assertAlmostEqual(result, 0.95, 3)
 
+    def test200_020_TwoTails(self):
+        t = 1.8946
+        n = 7
+        constant = _calculateConstant(n)
+        integration = _integrate(t, n, _f)
+        result = constant * integration * 2
+        self.assertAlmostEqual(result, 0.90, 3)
   
 
         
