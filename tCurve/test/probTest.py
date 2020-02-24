@@ -1,6 +1,8 @@
 from unittest import TestCase
 from tCurve.prob import prob as prob
 from tCurve.prob import _integrate
+from tCurve.prob import _f
+from tCurve.prob import _formal
 import json
 
 
@@ -229,8 +231,7 @@ class ProbTest(TestCase):
     def test200_010(self):
         t = 1
         n = 2
-        _f = t**2
-        self.assertAlmostEqual(1/3,_integrate(t, n, _f),3)
+        self.assertAlmostEqual(_formal(t,n),_integrate(t, n, _f),3)
         
    
         

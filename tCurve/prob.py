@@ -96,17 +96,37 @@ def _calculateConstant(n):
     return result
 
 
-def _f(u, n):
-    n = float(n)
-    base = (1 + (u ** 2) / n)
-    exponent = -(n + 1.0) / 2.0
-    result = base ** exponent
-    return result
+# def _f(u, n):
+#     n = float(n)
+#     base = (1 + (u ** 2) / n)
+#     exponent = -(n + 1.0) / 2.0
+#     result = base ** exponent
+#     return result
 
+def _f(u,n):
+    return u**n
 
+def _formal(u,n):
+    return u**(n+1)/(n+1)
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    return 1/3
+    epsilon = 0.001
+    simpsonOld = 0.0
+    simpsonNew = epsilon
+    s = 4
+    
+    w = t / s
+    temp = _f(0) + _f(t)
+    
+    for x in range(1, s):
+        if x % 2 == 0:
+            temp += _f(x*w)*2
+        else:
+            temp += _f(x*w)*4
+
+    simpsonNew = temp * w / 3
+    
+    return simpsonNew
 
     
